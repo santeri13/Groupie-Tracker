@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+	<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+	</head>
+    <style>
+        body {
+    background-color: rgb(19, 3, 63);
+  }
+    </style>
+
+    <body>
+        <center>
+        <h1 style="color: #E086D3;">{{.Name}}</h1>
+        <img class="img" src="{{.Image}}" width="400" height="400" alt="{{.Name}}">
+            <div class="div-members">
+                <p style="color: #E086D3;">Group Members:</p>
+                {{range .Members}}
+                <li class="member" style="color: #E086D3; list-style-type: none;">{{.}}</li>
+                {{end}}
+            </div>
+            <div class="album">
+                <p class="creation-date" style="color: #E086D3;">Creation Date:</p>
+                <p style="color: #E086D3;">{{.CreationDate}} year</p>
+                <p class="first-album" style="color: #E086D3;">First Album:</p>
+                <p style="color: #E086D3;">{{.FirstAlbum}}</p>
+            </div>
+            <p style="color: #E086D3;">Contserts:</p>
+            <div class="dates" style="color: #E086D3;">
+                {{range $location, $date := .Relationinfo.DatesLocations}}
+                <p class="location" style="color: #E086D3;">{{ $location }}</p>
+                {{range $date}}
+                <p class="date" style="color: #E086D3;">{{ . }}</p>
+                {{end}}
+                {{end}}
+            </div>
+        </center>
+     </body>
+	
+	
+	</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+	<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+	</head>
+	<style>
+		iframe {
+			width: 99vw;
+		}
+		.card {
+	  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	  transition: 0.3s;
+	  width: 40%;
+	}
+	
+	.card:hover {
+	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+	
+	.container {
+	  padding: 2px 16px;
+	}
+		</style>
+		
+	<body>
+	
+	  <header>
+		<h1>groupie-tracker</h1>
+		 </header>
+		<div>
+			{{range .}}
+				<div class="card">
+					<div class="container">
+						<a href="https://groupietrackers.herokuapp.com">
+							<img src={{ .Image }} name="image">
+						 </a>
+					  	<h4 name="name">{{ .Name }}/h4> 
+						<button name="button" onclick="window.location.href='groups'">Continue</button>
+					</div>
+				</div>
+			{{end}}
+		 </div>
+	</body>
+</html>
