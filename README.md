@@ -1,6 +1,6 @@
 # Groupie-Tracker
 
-This is web application which is forum.
+Web application which show information about groups from API.
 
 ## Usage
 
